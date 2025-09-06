@@ -70,7 +70,7 @@ class BlogPost(models.Model):
     title = models.CharField(max_length=150)
     slug = models.SlugField(blank=True, unique=True)
     content = models.TextField()
-    image = models.ImageField(upload_to='content_media/', blank=True, null=True, validators=[FileExtensionValidator(allowed_extensions=['jpg', 'png'])])
+    image = models.ImageField(upload_to='content_media/', default='content_media/default.jpg', blank=True, null=True, validators=[FileExtensionValidator(allowed_extensions=['jpg', 'png'])])
     author = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
     tags = models.ManyToManyField(Tag, blank=True)
