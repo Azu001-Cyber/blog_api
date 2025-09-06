@@ -1,4 +1,4 @@
-# Blogging  API
+# Blog  API
 This is a blogging rest api made with django rest framework
 
 # TECH STACK
